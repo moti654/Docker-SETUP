@@ -14,7 +14,8 @@
 sudo docker build -t mytorch:v1.2-12.2.0-devel-ubuntu20.04 .
 ```
 コンテナを起動して接続する例です。`-p`で指定するポートはTensorBoardで使用する番号を指定してください。<br>
-`--shm-size`で指定するサイズは大きい方がDataLoaderのnum_workersを大きく出来るので幸せになれるかもしれません。
+`--shm-size`で指定するサイズは大きい方がDataLoaderのnum_workersを大きく出来るので幸せになれるかもしれません。<br>
+`--mount`でディレクトリを指定するとDocker内から参照できます。`/my-repo`を変更して使ってください。
 ```
 sudo docker create --name mytorch -it --gpus all -p 127.0.0.1:6006:6006 --shm-size=2G --mount type=bind,src="$(pwd)"/my-repo,dst=/my-repo mytorch:v1.2-12.2.0-devel-ubuntu20.04 bash
 sudo docker start mytorch
