@@ -6,6 +6,18 @@
 |name|os|CUDA|Python|pip or conda|Library Type|
 |----|----|----|----|:--:|----|
 |none|ubuntu20.04|CUDA 11.8|Python 3.10.13|pip|PyTorch 2.0.1|
+|none|ubuntu22.04|CUDA 12.4|Python 3.10.12|pip|PyTorch:latest 2.5.1|
+
+## Docker Compose を利用する
+Docker Composeを利用することで、Dockerfileを直接操作するより簡単に仮想環境を用意できます。<br>
+`requirements.txt`にPytorch以外の必要なライブラリを記入します。
+`docker-compose.yml`の内容は基本的に「Dockerfile の利用方法」のオプション設定と同じです。<br>
+`-d`バックグラウンドでコンテナを実行する。 `--build`コンテナを開始前にイメージを構築する。新規なら無くても同じです。
+```
+docker compose up -d --build
+docker compose exec mytorch bash
+docker compose down
+```
 
 ## Dockerfile の利用方法
 `dockerfile`に移動して、`requirements.txt`にPytorch以外の必要なライブラリを記入します。<br>
