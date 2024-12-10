@@ -1,0 +1,21 @@
+services:
+  nvist:
+    build:
+      context: ./dockerfile
+      dockerfile: Dockerfile
+      shm_size: 32G
+    image: nvist:v1.0-12.4.1-devel-ubuntu22.04
+    volumes:
+      - type: bind
+        source: "./"
+        target: "/nvist"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "127.0.0.1:7006:6006"
+    tty: true
