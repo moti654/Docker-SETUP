@@ -1,14 +1,14 @@
 services:
-  nvist:
+  mytorch:
     build:
       context: ./dockerfile
       dockerfile: Dockerfile
       shm_size: 32G
-    image: nvist:v1.0-12.4.1-devel-ubuntu22.04
+    image: mytorch:v1.0-12.4.1-devel-ubuntu22.04
     volumes:
       - type: bind
         source: "./"
-        target: "/nvist"
+        target: "/my-repo"
     deploy:
       resources:
         reservations:
@@ -17,5 +17,5 @@ services:
               count: all
               capabilities: [gpu]
     ports:
-      - "127.0.0.1:7006:6006"
+      - "127.0.0.1:6006:6006"
     tty: true
