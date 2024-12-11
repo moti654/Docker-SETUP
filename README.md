@@ -3,7 +3,7 @@
 参考になれば幸いです。
 
 現在公開しているDockerfileの環境
-|name|os|CUDA|Python|pip or conda|Library Type|
+|name|OS|CUDA|Python|pip or conda|Library Type|
 |----|----|----|----|:--:|----|
 |none|ubuntu22.04|CUDA 12.4|Python 3.10.12|pip|PyTorch:latest 2.5.1|
 
