@@ -42,7 +42,8 @@ volumes:
 `-d`バックグラウンドでコンテナを実行する。 `--build`コンテナを開始前にイメージを構築する。新規なら無くても同じです。
 ```
 docker compose up -d --build
-docker compose exec mytorch bash
+# my_container をdocker compose upで作られたコンテナの名前に書き換える
+docker compose exec my_container bash
 # コンテナを停止・削除
 docker compose down
 ```
