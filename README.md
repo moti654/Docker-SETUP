@@ -18,7 +18,7 @@ YAMLのアンカーとエイリアスを使用しているだけなので直接�
 
 
 [公式ドキュメント](https://docs.docker.com/reference/compose-file/services/) で基本的に解決すると思います。<br>
-影響が大きいもの<br>
+
 ### volumes
 ```
 volumes:
