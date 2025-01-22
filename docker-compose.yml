@@ -2,7 +2,6 @@ x-docker_name: &DOCKER_NAME ""
 
 services:
   *DOCKER_NAME:
-  mytorch:
     build:
       context: ./dockerfile
       dockerfile: Dockerfile
